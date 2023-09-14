@@ -60,14 +60,27 @@ Descrição: Endpoint para exclusão do filme na base pelo id do filme.
 
 `bash
 curl -X 'DELETE' \
-  'https://localhost:7044/movies/delete/1981D5CF-C5E9-487F-8CC4-3744CF642513' \
+  'https://localhost:7044/movies/delete/id' \
   -H 'accept: */*'`
   
 ### `GET /movies/list`
 
 Descrição: Endpoint para listagem de todos os filmes na base.
 
+#### Exemplo de Uso
+
+`bash
+curl -X 'GET' \
+  'https://localhost:7044/movies/list' \
+  -H 'accept: */*'`
+
 ### `GET /movies/list-by-watched`
 
 Descrição: Endpoint para listagem de todos os filmes assistidos pelo usuario na base.
   
+#### Exemplo de Uso
+
+`bash
+curl -X 'GET' \
+  'https://localhost:7044/movies/list-by-watched' \
+  -H 'accept: */*'`
