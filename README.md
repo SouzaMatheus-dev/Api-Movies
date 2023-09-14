@@ -24,14 +24,14 @@ O corpo da solicitação deve ser um objeto JSON com as seguintes propriedades:
 
 Exemplo do corpo da solicitação:
 
-```json
+`json
 {
     "imDbId": "tt11737520",
     "name": "One Piece",
     "description": "Em um mundo marítimo, um jovem capitão pirata parte com sua equipe para alcançar o título de Rei dos Piratas e descobrir o tesouro mítico One Piece.",
     "releaseDate": "2023-09-14T20:36:02.892Z",
     "genre": "Ação"
-}```
+}`
 
 #### Exemplo de Uso
 
@@ -62,4 +62,12 @@ Descrição: Endpoint para exclusão do filme na base pelo id do filme.
 curl -X 'DELETE' \
   'https://localhost:7044/movies/delete/1981D5CF-C5E9-487F-8CC4-3744CF642513' \
   -H 'accept: */*'`
+  
+### `GET /movies/list`
+
+Descrição: Endpoint para listagem de todos os filmes na base.
+
+### `GET /movies/list-by-watched`
+
+Descrição: Endpoint para listagem de todos os filmes assistidos pelo usuario na base.
   
