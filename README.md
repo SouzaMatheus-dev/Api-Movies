@@ -35,7 +35,7 @@ Exemplo do corpo da solicitação:
 
 #### Exemplo de Uso
 
-```bash
+`bash
 curl -X 'POST' \
   'https://localhost:7044/movies/register' \
   -H 'accept: */*' \
@@ -46,7 +46,7 @@ curl -X 'POST' \
     "description": "Em um mundo marítimo, um jovem capitão pirata parte com sua equipe para alcançar o título de Rei dos Piratas e descobrir o tesouro mítico One Piece.",
     "releaseDate": "2023-09-14T20:36:02.892Z",
     "genre": "Ação"
-}'```
+}'`
 
 ### `DELETE /movies/delete/{id}`
 
@@ -58,8 +58,8 @@ Descrição: Endpoint para exclusão do filme na base pelo id do filme.
 
 #### Exemplo de Uso
 
-```bash
+`bash
 curl -X 'DELETE' \
   'https://localhost:7044/movies/delete/1981D5CF-C5E9-487F-8CC4-3744CF642513' \
-  -H 'accept: */*'```
+  -H 'accept: */*'`
   
