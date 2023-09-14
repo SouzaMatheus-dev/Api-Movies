@@ -38,6 +38,6 @@
         /// <summary>
         /// Obtém ou define a nota do usuário para o filme.
         /// </summary>
-        public string UserScore { get; set; }
+        public string? UserScore { get; set; }
     }
 }
