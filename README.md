@@ -26,7 +26,7 @@ O corpo da solicitação deve ser um objeto JSON com as seguintes propriedades:
 
 Exemplo do corpo da solicitação:
 
-```json
+`json
 {
     "imDbId": "tt11737520",
     "name": "One Piece",
@@ -37,7 +37,7 @@ Exemplo do corpo da solicitação:
 
 #### Exemplo de Uso
 
-bash
+`bash
 curl -X 'POST' \
   'https://localhost:7044/movies/register' \
   -H 'accept: */*' \
