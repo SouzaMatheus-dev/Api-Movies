@@ -8,7 +8,10 @@ namespace ManagementOfWatchedFilms.API.Infrastructure.AutoMapper.Profiles
     {
         public MovieProfile()
         {
-            CreateMap<MovieRequest, Movie>()
+            CreateMap<MovieCreateRequest, Movie>()
+                .ReverseMap();
+
+            CreateMap<MovieEditRequest, Movie>()
                 .ReverseMap();
 
             CreateMap<MovieResponse, Movie>()

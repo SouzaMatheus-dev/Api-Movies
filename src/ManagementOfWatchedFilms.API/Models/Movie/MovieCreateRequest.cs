@@ -2,7 +2,7 @@
 
 namespace ManagementOfWatchedFilms.API.Models.Movie
 {
-    public class MovieRequest
+    public class MovieCreateRequest
     {
         /// <summary>
         /// Obtém ou define o identificador do IMDb do filme.
@@ -33,15 +33,5 @@ namespace ManagementOfWatchedFilms.API.Models.Movie
         /// </summary>
         [Required]
         public string Genre { get; set; }
-
-        // <summary>
-        /// Obtém ou define a nota do usuário para o filme.
-        /// </summary>
-        public string? UserScore { get; set; }
-
-        /// <summary>
-        /// Obtém ou define um valor que indica se o filme foi assistido.
-        /// </summary>
-        public bool? Watched { get; set; }
     }
 }

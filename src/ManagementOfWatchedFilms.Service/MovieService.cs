@@ -59,13 +59,13 @@ namespace ManagementOfWatchedFilms.Service
             if (entity == null)
                 throw new ArgumentNullException(MovieErrorCode.M001.Code);
 
-            entity.Description = movie.Description;
-            entity.IMDbId = movie.IMDbId;
-            entity.Name = movie.Name;
-            entity.ReleaseDate = movie.ReleaseDate;
-            entity.Genre = movie.Genre;
-            entity.Watched = movie.Watched;
-            entity.UserScore = movie.UserScore;
+            entity.Description = !string.IsNullOrEmpty(movie.Description) ? movie.Description : entity.Description;
+            entity.IMDbId = !string.IsNullOrEmpty(movie.IMDbId) ? movie.IMDbId : entity.IMDbId;
+            entity.Name = !string.IsNullOrEmpty(movie.Name) ? movie.Name : entity.Name;
+            entity.ReleaseDate = movie.ReleaseDate == DateTime.MinValue ? entity.ReleaseDate : movie.ReleaseDate;
+            entity.Genre = !string.IsNullOrEmpty(movie.Genre) ? movie.Genre : entity.Genre;
+            entity.Watched = movie.Watched ?? entity.Watched;
+            entity.UserScore = !string.IsNullOrEmpty(movie.UserScore) ? movie.UserScore : entity.UserScore;
 
             _movieRepository.Update(entity);
             await _movieRepository.SaveChangesAsync();

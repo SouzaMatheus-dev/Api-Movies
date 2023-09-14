@@ -65,7 +65,7 @@ curl -X 'DELETE' \
   
 ### `GET /movies/list`
 
-Descrição: Endpoint para listagem de todos os filmes na base.
+Descrição: Endpoint para listagem de todos os filmes na base com a nota de avaliação do filme sendo buscada via api da IMDb.
 
 #### Exemplo de Uso
 
@@ -76,7 +76,7 @@ curl -X 'GET' \
 
 ### `GET /movies/list-by-watched`
 
-Descrição: Endpoint para listagem de todos os filmes assistidos pelo usuario na base.
+Descrição: Endpoint para listagem de todos os filmes assistidos pelo usuario na base com a nota de avaliação do filme sendo buscada via api da IMDb.
   
 #### Exemplo de Uso
 
@@ -84,3 +84,43 @@ Descrição: Endpoint para listagem de todos os filmes assistidos pelo usuario n
 curl -X 'GET' \
   'https://localhost:7044/movies/list-by-watched' \
   -H 'accept: */*'`
+  
+### `PATCH /movies/update/{id}`
+
+Descrição: Endpoint para registro do filme na base vinculando o id do IMDb.
+
+#### Parâmetros de entrada
+
+- `Id`: Id do filme cadastrado na base.
+
+#### Corpo da Solicitação
+
+O corpo da solicitação deve ser um objeto JSON com as seguintes propriedades:
+
+- `imDbId` (string): O identificador IMDb do filme.
+- `name` (string): O nome do filme.
+- `description` (string): Uma breve descrição do filme.
+- `releaseDate` (string): A data de lançamento do filme no formato "AAAA-MM-DDTHH:mm:ss.fffZ".
+- `genre` (string): O gênero do filme.
+- `userScore` (string): A nota do usuário para o filme.
+- `watched` (boolean): Indica se o filme já foi assistido (true para assistido, false caso contrário).
+
+Exemplo do corpo da solicitação:
+
+`json
+{
+	"userScore": "6.5",
+	"watched": true
+}`
+
+#### Exemplo de Uso
+
+`bash
+curl -X 'PATCH' \
+  'https://localhost:7044/movies/update/id' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"userScore": "6.5",
+	"watched": true
+}'`

@@ -38,12 +38,12 @@ namespace ManagementOfWatchedFilms.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ApiErrorCodeResponse), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Register(MovieRequest request)
+        public async Task<IActionResult> Register(MovieCreateRequest request)
         {
             if (request == null || !ModelState.IsValid)
                 return BadRequest();
 
-            var movie = _mapper.Map<MovieRequest, Movie>(request);
+            var movie = _mapper.Map<MovieCreateRequest, Movie>(request);
 
             await _movieService.AddAsync(movie);
             await _unitOfWork.CommitAsync();
@@ -56,7 +56,7 @@ namespace ManagementOfWatchedFilms.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ApiErrorCodeResponse), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DeleteCreditCard(Guid id)
+        public async Task<IActionResult> Delete(Guid id)
         {
             if (id.IsEmpty())
                 return BadRequest();
@@ -72,12 +72,12 @@ namespace ManagementOfWatchedFilms.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ApiErrorCodeResponse), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateRideId([FromRoute] Guid id, [FromBody] MovieRequest request)
+        public async Task<IActionResult> UpdateRideId([FromRoute] Guid id, [FromBody] MovieEditRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            var movie = _mapper.Map<MovieRequest, Movie>(request);
+            var movie = _mapper.Map<MovieEditRequest, Movie>(request);
 
             await _movieService.UpdateByIdAsync(id, movie);
             await _unitOfWork.CommitAsync();
