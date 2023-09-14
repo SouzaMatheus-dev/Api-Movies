@@ -21,8 +21,6 @@ O corpo da solicitação deve ser um objeto JSON com as seguintes propriedades:
 - `description` (string): Uma breve descrição do filme.
 - `releaseDate` (string): A data de lançamento do filme no formato "AAAA-MM-DDTHH:mm:ss.fffZ".
 - `genre` (string): O gênero do filme.
-- `userScore` (string): A nota do usuário para o filme.
-- `watched` (boolean): Indica se o filme já foi assistido (true para assistido, false caso contrário).
 
 Exemplo do corpo da solicitação:
 
@@ -33,7 +31,7 @@ Exemplo do corpo da solicitação:
     "description": "Em um mundo marítimo, um jovem capitão pirata parte com sua equipe para alcançar o título de Rei dos Piratas e descobrir o tesouro mítico One Piece.",
     "releaseDate": "2023-09-14T20:36:02.892Z",
     "genre": "Ação"
-}
+}`
 
 #### Exemplo de Uso
 
@@ -48,4 +46,4 @@ curl -X 'POST' \
     "description": "Em um mundo marítimo, um jovem capitão pirata parte com sua equipe para alcançar o título de Rei dos Piratas e descobrir o tesouro mítico One Piece.",
     "releaseDate": "2023-09-14T20:36:02.892Z",
     "genre": "Ação"
-}'
+}'`
