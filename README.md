@@ -1,8 +1,8 @@
-# Dhauz-Movies
+#Movies
 
 # Documentação da API
 
-Esta é a documentação da API Dhauz-Movies.
+Esta é a documentação da API Movies.
 
 ## Endpoints
 
